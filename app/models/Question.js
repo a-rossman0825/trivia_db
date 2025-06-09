@@ -27,21 +27,45 @@ export class Question {
 
   get cardHTMLTemplate() {
     return `
-      <div class="col-md-6 mb-3">
-        <div>
-          <span class="category bg-warning fw-bold"> Question 1: Television </span>
-          <span class="difficulty bg-info text-light"> hard </span>
-        </div>
-        <div class="border border-1 border-secondary rounded bg-dark p-3 mt-3">
-          <p class="text-light fw-bold">${this.question}</p>
-          <div class="d-flex flex-wrap gap-3">
-            <button onlick="app.QuestionsController.answerQuestion('${this.id}')" class="btn btn-outline-secondary"> ${this.answers} </button>
-            <button onlick="app.QuestionsController.answerQuestion('${this.id}')" class="btn btn-outline-secondary"> ${this.answers} </button>
-            <button onlick="app.QuestionsController.answerQuestion('${this.id}')" class="btn btn-outline-secondary"> ${this.answers} </button>
-            <button onlick="app.QuestionsController.answerQuestion('${this.id}')" class="btn btn-outline-secondary"> ${this.answers} </button>
-          </div>
+    <div class="col-md-6 mb-3">
+      <div>
+        <span class="category ${this.bubbleColor} fw-bold">
+          Question ${this.positionNumber}: ${this.category}
+        </span>
+        <span class="difficulty bg-info text-light">
+          ${this.difficulty}
+        </span>
+      </div>
+      <div class="border border-1 border-secondary rounded bg-dark p-3 mt-3">
+        <p class="text-light fw-bold">${this.question}</p>
+        <div class="d-flex flex-wrap gap-3">
+          ${this.answerButtons}
         </div>
       </div>
+    </div>
     `
+  }
+
+  get bubbleColor() {
+    if (!this.answered) return 'bg-warning'
+
+    return this.answeredCorrectly ? 'bg-success' : 'bg-danger'
+  }
+
+  buttonColor(answer) {
+    if (!this.answered) return 'btn-outline-secondary'
+
+    return answer == this.correctAnswer ? 'btn-success' : 'btn-danger'
+  }
+
+  get answerButtons() {
+    let buttonHTML = ''
+    this.answers.forEach(answer => {
+      buttonHTML += `
+      <button onclick="app.QuestionsController.answerQuestion('${this.id}', '${answer}')" class="btn ${this.buttonColor(answer)}" ${this.answered ? 'disabled' : ''}>
+        ${answer}
+      </button>`
+    })
+    return buttonHTML
   }
 }

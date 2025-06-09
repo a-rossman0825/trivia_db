@@ -6,7 +6,9 @@ import { setHTML } from "../utils/Writer.js";
 
 export class QuestionsController {
   constructor() {
-    
+    AppState.on('questions', this.drawQuestions);
+    AppState.on('activeCategory', this.getQuestionsByCategoryId);
+    this.getQuestions();
   }
 
   async getQuestions() {
