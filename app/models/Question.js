@@ -33,12 +33,12 @@ export class Question {
           <span class="difficulty bg-info text-light"> hard </span>
         </div>
         <div class="border border-1 border-secondary rounded bg-dark p-3 mt-3">
-          <p class="text-light fw-bold">In "Star Trek", what is the Klingon delicacy of "gagh" made from?</p>
+          <p class="text-light fw-bold">${this.question}</p>
           <div class="d-flex flex-wrap gap-3">
-            <button onlick="app.QuestionsController.answerQuestion('${this.id}')" class="btn btn-outline-secondary"> noodles </button>
-            <button onlick="app.QuestionsController.answerQuestion('${this.id}')" class="btn btn-outline-secondary"> Spaghetti noodles </button>
-            <button onlick="app.QuestionsController.answerQuestion('${this.id}')" class="btn btn-outline-secondary"> Spaghetti noodles </button>
-            <button onlick="app.QuestionsController.answerQuestion('${this.id}')" class="btn btn-outline-secondary"> Spaghetti noodles </button>
+            <button onlick="app.QuestionsController.answerQuestion('${this.id}')" class="btn btn-outline-secondary"> ${this.answers} </button>
+            <button onlick="app.QuestionsController.answerQuestion('${this.id}')" class="btn btn-outline-secondary"> ${this.answers} </button>
+            <button onlick="app.QuestionsController.answerQuestion('${this.id}')" class="btn btn-outline-secondary"> ${this.answers} </button>
+            <button onlick="app.QuestionsController.answerQuestion('${this.id}')" class="btn btn-outline-secondary"> ${this.answers} </button>
           </div>
         </div>
       </div>
