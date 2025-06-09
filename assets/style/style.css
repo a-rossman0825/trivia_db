@@ -7,9 +7,17 @@ body {
 
 main {
   flex-grow: 1;
-  display: flex;
-  place-content: center;
-  align-items: center;
+
+}
+
+.category {
+  border-radius: 15px 0 0 15px;
+  padding: 6px 8px;
+}
+
+.difficulty {
+  border-radius: 0 15px 15px 0;
+  padding: 6px 8px;
 }
 
 #pop-toast-container {

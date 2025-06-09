@@ -9,21 +9,48 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
-  <title>trivia_db</title>
+  <title>Trivia Night</title>
 </head>
 
-<body data-bs-theme="light">
+<body data-bs-theme="dark">
   <header>
-    <nav class="navbar bg-codeworks text-light gap-2 px-2">
-      <img src="./assets/img/logo.png" height="45" alt="" loading="lazy">
-      <div><b>trivia_db</b></div>
+    <nav class="navbar bg-codeworks text-light gap-2 px-2 row text-center">
+      <div class="fs-2"><b>Trivia Night</b></div>
       <div class="ms-auto" id="authstate"></div>
       </div>
     </nav>
   </header>
 
   <main>
-
+    <div class="container-fluid">
+      <section class="row">
+        <div class="col-12 my-2 text-center">
+          <h2 class="mt-3 text-secondary fs-4"> Categories </h2>
+          <!--STUB FOR CATEGORIES MODEL-->
+          <div id="categories" class="d-flex flex-wrap gap-2">
+            <!-- <button onclick="app.CategoriesController.setActiveCategory(NUM)" class="btn btn-secondary fw-bold" type="button"> Mythology </button> -->
+          </div>
+        </div>
+      </section>
+      <!-- STUB FOR QUESTION CARDS  -->
+      <section id="questions" class="row my-3">
+        <!-- <div class="col-md-6 mb-3">
+          <div>
+            <span class="category bg-warning fw-bold"> Question 1: Television </span>
+            <span class="difficulty bg-info text-light"> hard </span>
+          </div>
+          <div class="border border-1 border-secondary rounded bg-dark p-3 mt-3">
+            <p class="text-light fw-bold">In "Star Trek", what is the Klingon delicacy of "gagh" made from?</p>
+            <div class="d-flex flex-wrap gap-3">
+              <button onlick="" class="btn btn-outline-secondary"> Spaghetti noodles </button>
+              <button onlick="" class="btn btn-outline-secondary"> Spaghetti noodles </button>
+              <button onlick="" class="btn btn-outline-secondary"> Spaghetti noodles </button>
+              <button onlick="" class="btn btn-outline-secondary"> Spaghetti noodles </button>
+            </div>
+          </div>
+        </div> -->
+      </section>
+    </div>
 
   </main>
 
